@@ -52,3 +52,4 @@ Download the latest VM image from [here](https://github.com/CopterExpress/clover
     roslaunch clover_navigation move_base.launch
     python takeoff.py
 ```
+7. Place a 2D nav goal in Rviz to test the move_base package.
