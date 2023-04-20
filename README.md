@@ -53,3 +53,12 @@ Download the latest VM image from [here](https://github.com/CopterExpress/clover
     python takeoff.py
 ```
 7. Place a 2D nav goal in Rviz to test the move_base package.
+## Web Application
+1. Download the Rviz camera stream plug-in ROS package into the src directory of your workspace.
+```
+    git clone https://github.com/lucasw/rviz_camera_stream
+```
+2. Download the RecoDrone Web Application in your home folder:
+```
+    git clone 
+```
