@@ -54,11 +54,24 @@ Download the latest VM image from [here](https://github.com/CopterExpress/clover
 ```
 7. Place a 2D nav goal in Rviz to test the move_base package.
 ## Web Application
-1. Download the Rviz camera stream plug-in ROS package into the src directory of your workspace.
+1. Download the Rviz camera stream and image transport plug-in ROS package into the src directory of your workspace.
 ```
     git clone https://github.com/lucasw/rviz_camera_stream
+    sudo apt install ros-noetic-image-transport-plugins
+    sudo apt install ros-noetic-rosbridge-server
 ```
 2. Download the RecoDrone Web Application in your home folder:
 ```
-    git clone 
+    git clone https://github.com/hadieh-ayman/RecoDroneApplication
 ```
+3. Execute the catkin_made command.
+4. Download the required packages for the web application in the application terminal:
+```
+    pip install -r requirements.txt
+```
+5. Run the application with the following commands:
+```
+    export FLASK_APP=run.py
+    flask run
+```
+6. Admin email: hadiehabdulmajeed@gmail.com password: pass123
