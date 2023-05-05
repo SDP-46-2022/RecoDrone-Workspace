@@ -4,6 +4,7 @@
 <launch>
   <include file="$(find gmapping)/launch/slam_gmapping_pr2.launch"/>
   <include file="$(find clover_navigation)/launch/localization.launch"/>
+  <include file="$(find clover_navigation)/launch/camera.launch"/>
 
    <node pkg="clover_navigation" name="set_velocity" type="set_velocity.py" output="screen">
   </node>
