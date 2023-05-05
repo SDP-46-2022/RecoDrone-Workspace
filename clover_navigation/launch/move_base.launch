@@ -2,7 +2,11 @@
     ROS navigation stack with velocity smoother and safety (reactive) controller
 -->
 <launch>
+  <include file="$(find gmapping)/launch/slam_gmapping_pr2.launch"/>
   <include file="$(find clover_navigation)/launch/localization.launch"/>
+
+   <node pkg="clover_navigation" name="set_velocity" type="set_velocity.py" output="screen">
+  </node>
   
   <arg name="odom_frame_id"   default="odom"/>
   <arg name="base_frame_id"   default="base_link"/>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <node
+        pkg="image_transport"
+        type="republish"
+        name="republish_camera1"
+        output="screen"
+        args="raw in:=/camera1/image
+              compressed out:=/camera1/image_compressed">
+    </node>
+</launch>
