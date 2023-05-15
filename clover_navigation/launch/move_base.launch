@@ -13,8 +13,8 @@
   <arg name="base_frame_id"   default="base_link"/>
   <arg name="global_frame_id" default="map"/>
   <arg name="odom_topic" default="/ground_truth/state" />
-  <arg name="laser_topic" default="/lidar" />
-  <!-- <arg name="custom_param_file" default="$(find clover_navigation)/config/dummy.yaml"/> -->
+  <!-- <arg name="laser_topic" default="/lidar" /> -->
+  <arg name="laser_topic" default="/scan" />
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <rosparam file="$(find clover_navigation)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />

@@ -7,7 +7,8 @@
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
   <arg name="use_map_topic"   default="false"/>
-  <arg name="scan_topic"      default="/lidar"/> 
+  <!-- <arg name="scan_topic"      default="/lidar"/> -->
+  <arg name="laser_topic" default="/scan" />
   <arg name="initial_pose_x"  default="0.0"/>
   <arg name="initial_pose_y"  default="0.0"/>
   <arg name="initial_pose_a"  default="0.0"/>
