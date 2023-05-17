@@ -3,7 +3,7 @@
     <group ns="camera1">
     <!-- For the first Positioning: rosrun tf_publisher_gui tf_publisher_gui _parent_frame:=/chassis _child_frame:=/camera2 -->
     <node pkg="tf" type="static_transform_publisher" name="camera_broadcaster"
-        args="-0 0.0 10 0.707 0.707 0.0 0.0 map camera1 10" />
+        args="-5 0.0 10 0.707 0.707 0.0 0.0 map camera1 10" />
     <node name="camera_info" pkg="rostopic" type="rostopic"
         args="pub camera_info sensor_msgs/CameraInfo
         '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: 'camera1'},
@@ -17,7 +17,31 @@
         output="screen"/>
     </group>
 
+    <group ns="camera2">
+    <!-- For the first Positioning: rosrun tf_publisher_gui tf_publisher_gui _parent_frame:=/chassis _child_frame:=/camera2 -->
+    <node pkg="tf" type="static_transform_publisher" name="camera_broadcaster"
+        args="-5 0.0 20 0.707 0.707 0.0 0.0 map camera2 10" />
+    <node name="camera_info" pkg="rostopic" type="rostopic"
+        args="pub camera_info sensor_msgs/CameraInfo
+        '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: 'camera2'},
+        height: 980, width: 1280, distortion_model: 'plumb_bob',
+        D: [0],
+        K: [600.0, 0.0, 640, 0.0, 600.0, 360.0, 0.0, 0.0, 1.0],
+        R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0],
+        P: [600.0, 0.0, 640, 0.0, 0.0, 600, 360, 0.0, 0.0, 0.0, 1.0, 0.0],
+        binning_x: 0, binning_y: 0,
+        roi: {x_offset: 0, y_offset: 0, height: 720, width: 1280, do_rectify: false}}' -r 2"
+        output="screen"/>
+    </group>
+
     <group ns="/camera1/image">
+    <rosparam param="disable_pub_plugins">
+        - 'image_transport/compressed'
+        - 'image_transport/compressedDepth'
+        - 'image_transport/theora'
+    </rosparam>
+    </group>
+    <group ns="/camera2/image">
     <rosparam param="disable_pub_plugins">
         - 'image_transport/compressed'
         - 'image_transport/compressedDepth'

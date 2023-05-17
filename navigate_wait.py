@@ -34,3 +34,8 @@ def navigate_wait(x=0, y=0, z=0, yaw=float('nan'), yaw_rate=0, speed=0.5, \
 print('Take off 1 meter')
 navigate_wait(z=1, frame_id='body', auto_arm=True)
 
+print('Fly forward 1 m')
+navigate_wait(x=1, frame_id='body')
+
+print('Land')
+land()

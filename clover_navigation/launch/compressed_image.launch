@@ -8,4 +8,12 @@
         args="raw in:=/camera1/image
               compressed out:=/camera1/image_compressed">
     </node>
+    <node
+        pkg="image_transport"
+        type="republish"
+        name="republish_camera1"
+        output="screen"
+        args="raw in:=/camera2/image
+              compressed out:=/camera2/image_compressed">
+    </node>
 </launch>
